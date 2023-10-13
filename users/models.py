@@ -16,7 +16,7 @@ class User(AbstractUser):
     username = None
     
     phone = models.CharField(
-        max_length=10, 
+        max_length=11, 
         unique=True,
         verbose_name='номер телефона',
     )
@@ -25,11 +25,18 @@ class User(AbstractUser):
         blank=True, null=True,
         verbose_name='одноразовый пароль',
     )
-    invitation_code = models.CharField(
+    personal_invitation_code = models.CharField(
         max_length=6,
-        verbose_name='код приглашения',
+        verbose_name='мой код приглашения',
+        unique=True,
         null=True, blank=True,
-        )
+    )
+    someone_invite_code = models.CharField(
+        default=None,
+        max_length=6,
+        verbose_name='чей-то код приглашения',
+        null=True, blank=True,
+    )
     
     def __str__(self):
         return self.phone
