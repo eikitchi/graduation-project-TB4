@@ -9,8 +9,7 @@ def login_api_doc():
             properties={
                 'phone': openapi.Schema(
                     type=openapi.TYPE_STRING,
-                    description='Номер телефона пользователя' +
-                                '(формат: 7 800 800 80 80)',
+                    description='Номер телефона пользователя (формат: 7 800 800 80 80)',
                     example='7 800 800 80 80',
                 ),
             },
@@ -30,12 +29,11 @@ def login_api_doc():
             ),
             400: openapi.Response(
                 'Bad request', openapi.Schema(
-                    type=openapi.TYPE_OBJECT, 
+                    type=openapi.TYPE_OBJECT,
                     properties={
                         'message': openapi.Schema(
-                            type=openapi.TYPE_STRING, 
-                            example='Неверный формат телефона, должен быть' + 
-                                    'в формате 7 800 800 80 80',
+                            type=openapi.TYPE_STRING,
+                            example='Неверный формат телефона, должен быть в формате 7 800 800 80 80',
                         ),
                     },
                 ),
@@ -51,8 +49,7 @@ def verify_api_doc():
             properties={
                 'phone': openapi.Schema(
                     type=openapi.TYPE_STRING,
-                    description='Номер телефона пользователя ' +
-                                '(формат: 7 800 800 80 80)',
+                    description='Номер телефона пользователя (формат: 7 800 800 80 80)',
                     example='7 800 800 80 80',
                 ),
                 'otp': openapi.Schema(
@@ -84,10 +81,10 @@ def verify_api_doc():
             ),
             400: openapi.Response(
                 'Bad request', openapi.Schema(
-                    type=openapi.TYPE_OBJECT, 
+                    type=openapi.TYPE_OBJECT,
                     properties={
                         'message': openapi.Schema(
-                            type=openapi.TYPE_STRING, 
+                            type=openapi.TYPE_STRING,
                             example='Укажите: "phone" и "password"',
                         ),
                     },
@@ -95,10 +92,10 @@ def verify_api_doc():
             ),
             401: openapi.Response(
                 'Unauthorized', openapi.Schema(
-                    type=openapi.TYPE_OBJECT, 
+                    type=openapi.TYPE_OBJECT,
                     properties={
                         'message': openapi.Schema(
-                            type=openapi.TYPE_STRING, 
+                            type=openapi.TYPE_STRING,
                             example='Неверный пароль',
                         ),
                     },
@@ -106,10 +103,10 @@ def verify_api_doc():
             ),
             404: openapi.Response(
                 'Not found', openapi.Schema(
-                    type=openapi.TYPE_OBJECT, 
+                    type=openapi.TYPE_OBJECT,
                     properties={
                         'message': openapi.Schema(
-                            type=openapi.TYPE_STRING, 
+                            type=openapi.TYPE_STRING,
                             example='Такого пользователя не существует',
                         ),
                     },
@@ -117,12 +114,11 @@ def verify_api_doc():
             ),
             403: openapi.Response(
                 'Forbidden', openapi.Schema(
-                    type=openapi.TYPE_OBJECT, 
+                    type=openapi.TYPE_OBJECT,
                     properties={
                         'detail': openapi.Schema(
-                            type=openapi.TYPE_STRING, 
-                            example='You do not have permission to perform' + 
-                                    'this action.',
+                            type=openapi.TYPE_STRING,
+                            example='You do not have permission to perform this action.',
                         ),
                     },
                 ),
@@ -160,10 +156,10 @@ def refresh_api_doc():
             ),
             422: openapi.Response(
                 'Invalid token', openapi.Schema(
-                    type=openapi.TYPE_OBJECT, 
+                    type=openapi.TYPE_OBJECT,
                     properties={
                         'detail': openapi.Schema(
-                            type=openapi.TYPE_STRING, 
+                            type=openapi.TYPE_STRING,
                             example='Неверный токен',
                         ),
                     },
@@ -203,22 +199,21 @@ def profile_update_api_doc():
         responses={
             400: openapi.Response(
                 'Bad request', openapi.Schema(
-                    type=openapi.TYPE_OBJECT, 
+                    type=openapi.TYPE_OBJECT,
                     properties={
                         'message': openapi.Schema(
-                            type=openapi.TYPE_STRING, 
-                            example='Нельзя изменить код пригласившего' + 
-                                    'пользователя',
+                            type=openapi.TYPE_STRING,
+                            example='Нельзя изменить код пригласившего пользователя',
                         ),
                     },
                 ),
             ),
             406: openapi.Response(
                 'Not Acceptable', openapi.Schema(
-                    type=openapi.TYPE_OBJECT, 
+                    type=openapi.TYPE_OBJECT,
                     properties={
                         'message': openapi.Schema(
-                            type=openapi.TYPE_STRING, 
+                            type=openapi.TYPE_STRING,
                             example='Код приглашения не существует',
                         ),
                     },
@@ -226,10 +221,10 @@ def profile_update_api_doc():
             ),
             404: openapi.Response(
                 'Not found', openapi.Schema(
-                    type=openapi.TYPE_OBJECT, 
+                    type=openapi.TYPE_OBJECT,
                     properties={
                         'detail': openapi.Schema(
-                            type=openapi.TYPE_STRING, 
+                            type=openapi.TYPE_STRING,
                             example='Not found.',
                         ),
                     },
@@ -237,12 +232,11 @@ def profile_update_api_doc():
             ),
             403: openapi.Response(
                 'Forbidden', openapi.Schema(
-                    type=openapi.TYPE_OBJECT, 
+                    type=openapi.TYPE_OBJECT,
                     properties={
                         'detail': openapi.Schema(
-                            type=openapi.TYPE_STRING, 
-                            example='You do not have permission to perform' + 
-                                    'this action.',
+                            type=openapi.TYPE_STRING,
+                            example='You do not have permission to perform this action.',
                         ),
                     },
                 ),
